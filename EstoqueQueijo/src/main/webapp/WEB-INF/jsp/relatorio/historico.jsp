@@ -57,7 +57,7 @@
                     <tbody>
                         <c:forEach var="m" items="${historico}">
                             <tr>
-                                <td><fmt:formatDate value="${m.dataHora}" pattern="dd/MM/yyyy HH:mm:ss"/></td>
+                                <td>${m.dataHoraFormatada}</td>
                                 <td>${m.produtoNome}</td>
                                 <td>
                                     <c:choose>

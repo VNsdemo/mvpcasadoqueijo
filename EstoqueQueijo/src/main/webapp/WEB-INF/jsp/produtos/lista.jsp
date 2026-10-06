@@ -36,6 +36,7 @@
     </style>
 </head>
 <body>
+    <fmt:setLocale value="pt_BR"/>
     <div class="header">
         <h1>🧀 Casa do Queijo de Coqueiral</h1>
         <p>Sistema de Controle de Estoque</p>
@@ -79,7 +80,7 @@
                                 <td>${p.quantidade} ${p.unidade}</td>
                                 <td>${p.estoqueMinimo} ${p.unidade}</td>
                                 <td>${p.unidade}</td>
-                                <td>R$ <fmt:formatNumber value="${p.precoCusto}" type="currency"/></td>
+                               <td>R$ <fmt:formatNumber value="${p.precoCusto}" minFractionDigits="2" maxFractionDigits="2"/></td>
                                 <td>${p.fornecedorNome}</td>
                                 <td>
                                     <c:choose>

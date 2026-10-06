@@ -62,16 +62,9 @@
                 <div class="form-group">
                     <label>Tipo de Movimentação</label>
                     <div class="btn-group">
-                        <label style="flex:1; text-align:center;">
-                            <input type="radio" name="tipo" value="ENTRADA" required style="display:none;">
-                            <button type="button" class="btn btn-success" style="width:100%;" onclick="selectType(this, 'ENTRADA')">📥 Entrada</button>
-                        </label>
-                        <label style="flex:1; text-align:center;">
-                            <input type="radio" name="tipo" value="SAÍDA" style="display:none;">
-                            <button type="button" class="btn btn-danger" style="width:100%;" onclick="selectType(this, 'SAÍDA')">📤 Saída</button>
-                        </label>
+                        <label style="flex:1;"><input type="radio" name="tipo" value="ENTRADA" required style="width:auto;"> 📥 Entrada</label>
+                        <label style="flex:1;"><input type="radio" name="tipo" value="SAÍDA" style="width:auto;"> 📤 Saída</label>
                     </div>
-                    <input type="hidden" id="tipoHidden" name="tipo">
                 </div>
                 <div class="form-group">
                     <label for="quantidade">Quantidade</label>
@@ -81,17 +74,6 @@
             </form>
         </div>
     </div>
-    <script>
-        function selectType(btn, type) {
-            document.getElementById('tipoHidden').value = type;
-            document.querySelectorAll('.btn-group .btn').forEach(b => {
-                b.style.opacity = '0.5';
-                b.style.border = '2px solid transparent';
-            });
-            btn.style.opacity = '1';
-            btn.style.border = '2px solid #333';
-        }
-    </script>
     <div class="footer">Casa do Queijo de Coqueiral &copy; 2024</div>
 </body>
 </html>
