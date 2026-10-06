@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
+    <data-source source="LOCAL" name="Demo SQLite" uuid="0ca33930-f2b9-44a7-8f04-ef8dc49c79e7">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite::memory:</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <init-script>CREATE TABLE IF NOT EXISTS users (id INT PRIMARY KEY, name VARCHAR(50), city VARCHAR(50));
+INSERT INTO users (id, name, city) VALUES (1, 'Alice', 'Berlin') ON CONFLICT DO NOTHING;
+INSERT INTO users (id, name, city) VALUES (2, 'Bob', 'Tokyo') ON CONFLICT DO NOTHING;
+INSERT INTO users (id, name, city) VALUES (3, 'Carol', 'Paris') ON CONFLICT DO NOTHING;</init-script>
+    </data-source>
+    <data-source source="LOCAL" name="Demo SQLite" uuid="d3933fea-6857-4ffe-8f05-9f0c5ad1ca5f">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite::memory:</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <init-script>CREATE TABLE IF NOT EXISTS users (id INT PRIMARY KEY, name VARCHAR(50), city VARCHAR(50));
+INSERT INTO users (id, name, city) VALUES (1, 'Alice', 'Berlin') ON CONFLICT DO NOTHING;
+INSERT INTO users (id, name, city) VALUES (2, 'Bob', 'Tokyo') ON CONFLICT DO NOTHING;
+INSERT INTO users (id, name, city) VALUES (3, 'Carol', 'Paris') ON CONFLICT DO NOTHING;</init-script>
+    </data-source>
+    <data-source source="LOCAL" name="Demo SQLite" uuid="8b9268b3-5f88-403e-ae91-1dc55ddeceb8">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite::memory:</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+      <init-script>CREATE TABLE IF NOT EXISTS users (id INT PRIMARY KEY, name VARCHAR(50), city VARCHAR(50));
+INSERT INTO users (id, name, city) VALUES (1, 'Alice', 'Berlin') ON CONFLICT DO NOTHING;
+INSERT INTO users (id, name, city) VALUES (2, 'Bob', 'Tokyo') ON CONFLICT DO NOTHING;
+INSERT INTO users (id, name, city) VALUES (3, 'Carol', 'Paris') ON CONFLICT DO NOTHING;</init-script>
+    </data-source>
+    <data-source source="LOCAL" name="identifier.sqlite" uuid="1e719dd2-d98d-4c84-be77-4055818a3724">
+      <driver-ref>sqlite.xerial</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
+      <jdbc-url>jdbc:sqlite:identifier.sqlite</jdbc-url>
+      <working-dir>$ProjectFileDir$</working-dir>
+    </data-source>
+  </component>
+</project>
