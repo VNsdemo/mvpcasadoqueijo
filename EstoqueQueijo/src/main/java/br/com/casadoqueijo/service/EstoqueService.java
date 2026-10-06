@@ -20,6 +20,7 @@ public class EstoqueService {
         produtos.salvar(produto);
     }
     public void movimentar(int produtoId, String tipo, double quantidade) {
+        if (!"ENTRADA".equals(tipo) && !"SAÍDA".equals(tipo)) throw new IllegalArgumentException("Selecione o tipo da movimentação (entrada ou saída).");
         if (quantidade<=0) throw new IllegalArgumentException("A quantidade deve ser maior que zero.");
         Produto atual = produtos.buscarPorId(produtoId);
         if (atual==null) throw new IllegalArgumentException("Produto não encontrado.");

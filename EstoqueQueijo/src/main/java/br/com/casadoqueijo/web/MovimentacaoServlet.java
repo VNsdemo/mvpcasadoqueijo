@@ -38,7 +38,8 @@ public class MovimentacaoServlet extends HttpServlet {
             double quantidade = Double.parseDouble(param(req, "quantidade").replace(',', '.'));
 
             estoqueService.movimentar(produtoId, tipo, quantidade);
-            resp.sendRedirect(req.getContextPath() + "/movimentacao?msg=" + tipo + " registrada com sucesso!");
+            resp.sendRedirect(req.getContextPath() + "/movimentacao?msg="
+                    + java.net.URLEncoder.encode(tipo + " registrada com sucesso!", java.nio.charset.StandardCharsets.UTF_8));
         } catch (IllegalArgumentException e) {
             java.util.List<Produto> produtos = estoqueService.produtos();
             req.setAttribute("produtos", produtos);
