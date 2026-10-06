@@ -29,6 +29,22 @@ public class ProdutoRepository {
             p.setDouble(1,quantidade); p.setInt(2,id); if (p.executeUpdate() == 0) throw new IllegalArgumentException("Produto não encontrado.");
         } catch (SQLException e) { throw new IllegalStateException("Erro ao atualizar estoque.",e); }
     }
+    public void excluir(int id) {
+        try (Connection c = Database.getConnection()) {
+            c.setAutoCommit(false);
+            try (PreparedStatement mov = c.prepareStatement("DELETE FROM movimentacoes WHERE produto_id=?");
+                 PreparedStatement prod = c.prepareStatement("DELETE FROM produtos WHERE id=?")) {
+                mov.setInt(1, id);
+                mov.executeUpdate();
+                prod.setInt(1, id);
+                if (prod.executeUpdate() == 0) throw new IllegalArgumentException("Produto não encontrado.");
+                c.commit();
+            } catch (RuntimeException | SQLException e) {
+                c.rollback();
+                throw e;
+            }
+        } catch (SQLException e) { throw new IllegalStateException("Erro ao excluir produto.", e); }
+    }
     private List<Produto> consultar(String sql, boolean porId, int... id) {
         List<Produto> lista = new ArrayList<>();
         try (Connection c = Database.getConnection(); PreparedStatement p = c.prepareStatement(sql)) {

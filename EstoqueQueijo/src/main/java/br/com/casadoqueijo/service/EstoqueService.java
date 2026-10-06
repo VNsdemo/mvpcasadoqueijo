@@ -29,6 +29,10 @@ public class EstoqueService {
         produtos.atualizarQuantidade(produtoId,novoEstoque);
         movimentacoes.salvar(produtoId,tipo,quantidade);
     }
+    public void excluir(int produtoId) {
+        if (produtos.buscarPorId(produtoId) == null) throw new IllegalArgumentException("Produto não encontrado.");
+        produtos.excluir(produtoId);
+    }
     public List<Produto> produtos() { return produtos.listarTodos(); }
     public List<Produto> criticos() { return produtos.listarAbaixoDoMinimo(); }
     public double sugestao(Produto p) { return Math.max(0,(p.estoqueMinimo()*2)-p.quantidade()); }

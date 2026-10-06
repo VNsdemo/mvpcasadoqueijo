@@ -20,6 +20,8 @@
         .btn { display: inline-block; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 0.9em; font-weight: 600; cursor: pointer; border: none; }
         .btn-primary { background: #4a2c2a; color: #fff; }
         .btn-primary:hover { background: #6b3f3d; }
+        .btn-danger { background: #dc3545; color: #fff; padding: 6px 12px; }
+        .btn-danger:hover { background: #b02a37; }
         table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         th { background: #4a2c2a; color: #fff; padding: 12px 16px; text-align: left; font-size: 0.85em; text-transform: uppercase; }
         td { padding: 10px 16px; border-bottom: 1px solid #eee; font-size: 0.9em; }
@@ -43,6 +45,9 @@
     </div>
     <div class="container">
         <c:if test="${not empty param.msg}">
+                <c:if test="${not empty erro}">
+                    <div class="alert alert-error"><c:out value="${erro}"/></div>
+                </c:if>
             <div class="alert alert-success">${param.msg}</div>
         </c:if>
         <div class="page-header">
@@ -69,6 +74,8 @@
                             <th>Preço Custo</th>
                             <th>Fornecedor</th>
                             <th>Status</th>
+                            <th>Ações</th>
+
                         </tr>
                     </thead>
                     <tbody>
@@ -92,6 +99,14 @@
                                         </c:otherwise>
                                     </c:choose>
                                 </td>
+                                <td>
+                                            <form method="post" action="${pageContext.request.contextPath}/produtos" style="margin:0;"
+                                                  onsubmit="return confirm('Excluir este produto? O histórico de movimentações dele também será apagado.');">
+                                                <input type="hidden" name="action" value="excluir">
+                                                <input type="hidden" name="id" value="${p.id}">
+                                                <button type="submit" class="btn btn-danger">Excluir</button>
+                                            </form>
+                                        </td>
                             </tr>
                         </c:forEach>
                     </tbody>

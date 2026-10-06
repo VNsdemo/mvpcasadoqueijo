@@ -11,6 +11,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import java.net.URLEncoder;
+import java.nio.charset.StandardCharsets;
 
 @WebServlet("/produtos")
 public class ProdutoServlet extends HttpServlet {
@@ -42,6 +44,8 @@ public class ProdutoServlet extends HttpServlet {
         String action = req.getParameter("action");
         if ("cadastrar".equals(action)) {
             cadastrar(req, resp);
+        } else if ("excluir".equals(action)) {
+            excluir(req, resp);
         } else {
             resp.sendRedirect(req.getContextPath() + "/produtos");
         }
@@ -74,7 +78,18 @@ public class ProdutoServlet extends HttpServlet {
             req.getRequestDispatcher("/WEB-INF/jsp/produtos/cadastro.jsp").forward(req, resp);
         }
     }
-
+    private void excluir(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+        try {
+            int id = Integer.parseInt(param(req, "id"));
+            estoqueService.excluir(id);
+            resp.sendRedirect(req.getContextPath() + "/produtos?msg="
+                    + URLEncoder.encode("Produto excluído com sucesso!", StandardCharsets.UTF_8));
+        } catch (Exception e) {
+            req.setAttribute("erro", e instanceof NumberFormatException ? "Produto inválido." : e.getMessage());
+            req.setAttribute("produtos", estoqueService.produtos());
+            req.getRequestDispatcher("/WEB-INF/jsp/produtos/lista.jsp").forward(req, resp);
+        }
+    }
     private String param(HttpServletRequest req, String name) {
         String v = req.getParameter(name);
         return v == null ? "" : v.trim();
