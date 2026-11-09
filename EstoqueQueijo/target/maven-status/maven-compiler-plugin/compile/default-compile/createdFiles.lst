@@ -1,1 +1,16 @@
+br/com/casadoqueijo/database/Database.class
+br/com/casadoqueijo/service/EstoqueService.class
+br/com/casadoqueijo/web/RelatorioServlet.class
+br/com/casadoqueijo/model/Produto.class
+br/com/casadoqueijo/web/MovimentacaoServlet.class
+br/com/casadoqueijo/menu/MenuPrincipal.class
+br/com/casadoqueijo/model/Movimentacao.class
+br/com/casadoqueijo/web/AppContextListener.class
+br/com/casadoqueijo/Main.class
+br/com/casadoqueijo/web/FornecedorServlet.class
 br/com/casadoqueijo/web/EncodingFilter.class
+br/com/casadoqueijo/web/ProdutoServlet.class
+br/com/casadoqueijo/repository/FornecedorRepository.class
+br/com/casadoqueijo/repository/ProdutoRepository.class
+br/com/casadoqueijo/repository/MovimentacaoRepository.class
+br/com/casadoqueijo/model/Fornecedor.class

@@ -12,7 +12,6 @@ public record Movimentacao(int id, int produtoId, String produtoNome, String tip
     public double getQuantidade() { return quantidade; }
     public LocalDateTime getDataHora() { return dataHora; }
 
-    // O <fmt:formatDate> não aceita LocalDateTime, então a data já sai formatada daqui
     public String getDataHoraFormatada() {
         return dataHora.format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss"));
     }

@@ -32,8 +32,8 @@
         .badge-success { background: #28a745; color: #fff; }
         .page-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
         .page-header h2 { font-size: 1.3em; }
-        .back-link { color: #4a2c2a; text-decoration: none; font-size: 0.9em; }
-        .back-link:hover { text-decoration: underline; }
+        .back-link { display: inline-block; padding: 10px 20px; border-radius: 6px; background: #4a2c2a; color: #fff; text-decoration: none; font-size: 0.9em; font-weight: 600; }
+        .back-link:hover { background: #6b3f3d; }
         .footer { text-align: center; padding: 20px; color: #999; font-size: 0.8em; }
     </style>
 </head>
