@@ -12,6 +12,8 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.List;
+import br.com.casadoqueijo.pdf.RelatorioCriticosPdf;
+import java.time.LocalDateTime;
 
 @WebServlet("/relatorio")
 public class RelatorioServlet extends HttpServlet {
@@ -33,6 +35,12 @@ public class RelatorioServlet extends HttpServlet {
             List<Produto> criticos = estoqueService.criticos();
             req.setAttribute("criticos", criticos);
             req.getRequestDispatcher("/WEB-INF/jsp/relatorio/criticos.jsp").forward(req, resp);
+        } else if ("criticos-pdf".equals(tipo)) {
+            byte[] pdf = RelatorioCriticosPdf.gerar(estoqueService.criticos(), LocalDateTime.now());
+            resp.setContentType("application/pdf");
+            resp.setHeader("Content-Disposition", "inline; filename=\"estoque-critico.pdf\"");
+            resp.setContentLength(pdf.length);
+            resp.getOutputStream().write(pdf);
         } else if ("historico".equals(tipo)) {
             List<Movimentacao> historico = movimentacaoRepo.listarTodas();
             req.setAttribute("historico", historico);

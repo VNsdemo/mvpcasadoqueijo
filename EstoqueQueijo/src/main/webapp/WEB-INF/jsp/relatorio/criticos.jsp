@@ -15,6 +15,8 @@
         .header p { opacity: 0.8; font-size: 0.9em; margin-top: 4px; }
         .container { max-width: 960px; margin: 30px auto; padding: 0 20px; }
         .btn { display: inline-block; padding: 10px 20px; border-radius: 6px; text-decoration: none; font-size: 0.9em; font-weight: 600; cursor: pointer; border: none; }
+        .btn-pdf { background: #4a2c2a; color: #fff; margin-right: 8px; }
+        .btn-pdf:hover { background: #6b3f3d; }
         table { width: 100%; border-collapse: collapse; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
         th { background: #4a2c2a; color: #fff; padding: 12px 16px; text-align: left; font-size: 0.85em; text-transform: uppercase; }
         td { padding: 10px 16px; border-bottom: 1px solid #eee; font-size: 0.9em; }
@@ -35,12 +37,17 @@
         <h1>🧀 Casa do Queijo de Coqueiral</h1>
         <p>Sistema de Controle de Estoque</p>
     </div>
-    <div class="container">
-        <div class="page-header">
-            <h2>⚠️ Produtos com Estoque Crítico</h2>
-            <a href="${pageContext.request.contextPath}/" class="back-link">← Menu</a>
-        </div>
-        <c:choose>
+            <div class="container">
+                <div class="page-header">
+                    <h2>⚠️ Produtos com Estoque Crítico</h2>
+                    <div>
+                        <c:if test="${not empty criticos}">
+                            <a href="${pageContext.request.contextPath}/relatorio?tipo=criticos-pdf" target="_blank" class="btn btn-pdf">📄 Gerar PDF</a>
+                        </c:if>
+                        <a href="${pageContext.request.contextPath}/" class="back-link">← Menu</a>
+                    </div>
+                </div>
+                <c:choose>
             <c:when test="${empty criticos}">
                 <p>✅ Nenhum produto abaixo do estoque mínimo. Tudo em ordem!</p>
             </c:when>

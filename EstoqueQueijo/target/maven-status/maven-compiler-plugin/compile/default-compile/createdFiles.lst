@@ -1,5 +1,8 @@
+br/com/casadoqueijo/pdf/PdfDocumento.class
+br/com/casadoqueijo/pdf/PdfDocumento$Fonte.class
 br/com/casadoqueijo/database/Database.class
 br/com/casadoqueijo/service/EstoqueService.class
+br/com/casadoqueijo/pdf/RelatorioCriticosPdf.class
 br/com/casadoqueijo/web/RelatorioServlet.class
 br/com/casadoqueijo/model/Produto.class
 br/com/casadoqueijo/web/MovimentacaoServlet.class

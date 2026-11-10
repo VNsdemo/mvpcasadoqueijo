@@ -4,6 +4,8 @@
 /home/pedrobernardes/Área de trabalho/Pedro Projetos/JAVA/Sistema Banco Simples/mvpcasadoqueijo/EstoqueQueijo/src/main/java/br/com/casadoqueijo/model/Fornecedor.java
 /home/pedrobernardes/Área de trabalho/Pedro Projetos/JAVA/Sistema Banco Simples/mvpcasadoqueijo/EstoqueQueijo/src/main/java/br/com/casadoqueijo/model/Movimentacao.java
 /home/pedrobernardes/Área de trabalho/Pedro Projetos/JAVA/Sistema Banco Simples/mvpcasadoqueijo/EstoqueQueijo/src/main/java/br/com/casadoqueijo/model/Produto.java
+/home/pedrobernardes/Área de trabalho/Pedro Projetos/JAVA/Sistema Banco Simples/mvpcasadoqueijo/EstoqueQueijo/src/main/java/br/com/casadoqueijo/pdf/PdfDocumento.java
+/home/pedrobernardes/Área de trabalho/Pedro Projetos/JAVA/Sistema Banco Simples/mvpcasadoqueijo/EstoqueQueijo/src/main/java/br/com/casadoqueijo/pdf/RelatorioCriticosPdf.java
 /home/pedrobernardes/Área de trabalho/Pedro Projetos/JAVA/Sistema Banco Simples/mvpcasadoqueijo/EstoqueQueijo/src/main/java/br/com/casadoqueijo/repository/FornecedorRepository.java
 /home/pedrobernardes/Área de trabalho/Pedro Projetos/JAVA/Sistema Banco Simples/mvpcasadoqueijo/EstoqueQueijo/src/main/java/br/com/casadoqueijo/repository/MovimentacaoRepository.java
 /home/pedrobernardes/Área de trabalho/Pedro Projetos/JAVA/Sistema Banco Simples/mvpcasadoqueijo/EstoqueQueijo/src/main/java/br/com/casadoqueijo/repository/ProdutoRepository.java
